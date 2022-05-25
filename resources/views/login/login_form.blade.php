@@ -14,6 +14,8 @@
 <form class="form-signin" method="POST" action="{{ route('login')}}">
     @csrf
     <h1 class="h3 mb-3 font-weight-normal">ログインフォーム</h1>
+    <x-alert type="danger" :session="session('login_error')"/>
+    <x-alert type="danger" :session="session('logout')"/>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address">
     @if ($errors->has('email'))
